@@ -4,17 +4,6 @@
 clear
 sair=0
 seguir=true
-#Opcions(1. ver se un ficheiro existe, 2. renomear un arquivo, 3.listar todos os elementos e indicar se son arquivos ou directorios, 4. Mostrar tamanho dun arquivo, 5. Mover un arquivo a outro directorio)
-while [ $sair -eq 0 ]
-do
-echo -e "Elixe unha opción: \n1. Comprobar se existe un arquivo.
-\n2. Renomear un arquivo. 
-\n3. Mostrar as especificacions do sistema(Windows)
-\n4. Mostrar as especificacions do sistema(Linux)
-\n5. Mostrar o tamaño dun arquivo
-\n6. Crear un directorio
-\n7. Sair do programa"
-read opcion
 function comprobararchivo(){
     while $seguir
     do
@@ -107,6 +96,18 @@ function creardirectorio(){
         fi
     done
 }
+#Opcions(1. ver se un ficheiro existe, 2. renomear un arquivo, 3.listar todos os elementos e indicar se son arquivos ou directorios, 4. Mostrar tamanho dun arquivo, 5. Mover un arquivo a outro directorio)
+while [ $sair -eq 0 ]
+do
+echo -e "Elixe unha opción: \n1. Comprobar se existe un arquivo.
+\n2. Renomear un arquivo. 
+\n3. Mostrar as especificacions do sistema(Windows)
+\n4. Mostrar as especificacions do sistema(Linux)
+\n5. Mostrar o tamaño dun arquivo
+\n6. Crear un directorio
+\n7. Sair do programa"
+read opcion
+
 
 if [ $opcion == 1 ]
 then
