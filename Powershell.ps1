@@ -48,7 +48,7 @@ Write-Host "Gañaches en $contador intentos."
 #Lista ordenada
 $numeros = @()
 do {
-    $leernum = Read-Host "Introduce un número (0 para saír):"
+    [int]$leernum = Read-Host "Introduce un número (0 para saír):"
     if ($leernum -ne 0) {
         $numeros += $leernum
     }
