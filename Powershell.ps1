@@ -27,23 +27,24 @@ do {
 
 #Adivinanza
 $random = New-Object System.Random
-$inferior = Read-Host "Introduce o número inferior: "
-$superior = Read-Host "Introduce o número superior: "
+[int]$inferior = Read-Host "Introduce o número inferior: "
+[int]$superior = Read-Host "Introduce o número superior: "
 $numaleatorio = $random.Next($inferior, $superior)
 $contador = 0
 
 do {
-    $leer = Read-Host "Adiviña o numero: "
+    [int]$leer = Read-Host "Adiviña o numero: "
     $contador++
-    if ($leer -lt $numaleatorio) {
-        Write-Host "O número é maior que o introducido."
+    if (($leer -gt $superior) -or ($leer -lt $inferior)) {
+        Write-Host "Numero invalido"
     } elseif ($leer -gt $numaleatorio) {
         Write-Host "O número é inferior ao introducido."
+    } elseif($leer -lt $numaleatorio){
+        Write-Host "O numero e maior ao introducido"
     }
 } until ($leer -eq $numaleatorio)
 
 Write-Host "Gañaches en $contador intentos."
-
 #Lista ordenada
 $numeros = @()
 do {
